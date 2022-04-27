@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Inleiding Scientific Computing deel 2 - Computed Tomography</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.4/css/uikit.gradient.css">
+
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/diversen/pandoc-uikit/master/style.css">
+        <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <!-- <script src="uikit.js"></script> -->
+        <script src="https://cdn.rawgit.com/diversen/pandoc-uikit/master/uikit.js"></script>
+        <!-- <script src="scripts.js"></script> -->
+        <script src="https://cdn.rawgit.com/diversen/pandoc-uikit/master/scripts.js"></script>
+        <!-- <script src="jquery.sticky-kit.js "></script> -->
+        <script src="https://cdn.rawgit.com/diversen/pandoc-uikit/master/jquery.sticky-kit.js"></script>
+
+        <meta name="generator" content="pandoc-uikit" />
+                        <title>Inleiding Scientific Computing deel 2 - Computed Tomography</title>
+        <style type="text/css">code{white-space: pre;}</style>
+                                                       
+    </head>
+
+    <body>
+
+
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+                        <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-1-1">
+                    <h1 class="uk-heading-large">Inleiding Scientific Computing deel 2 - Computed Tomography</h1>
+                                                        </div>
+            </div>
+            
+            <div class="uk-grid" data-uk-grid-margin >          
+                <div class="uk-width-medium-1-4">
+                    <div class="uk-overflow-container" data-uk-sticky="{top:25,media: 768}">
+                        <div class="uk-panel uk-panel-box menu-begin" >
+
+                                                        <ul>
+                                                        <li><a href="#overview">Overview</a></li>
+                                                        <li><a href="#usefull-resources">Usefull resources</a></li>
+                                                        <li><a href="#week-1">Week 1</a>
+                                                        <ul>
+                                                        <li><a href="#lectures">Lectures:</a></li>
+                                                        <li><a href="#assignments">Assignments:</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#week-2">Week 2</a>
+                                                        <ul>
+                                                        <li><a href="#lectures-1">Lectures:</a></li>
+                                                        <li><a href="#assignments-1">Assignments:</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#week-3">Week 3</a>
+                                                        <ul>
+                                                        <li><a href="#lectures-2">Lectures:</a></li>
+                                                        <li><a href="#assignments-2">Assignments:</a></li>
+                                                        </ul></li>
+                                                        </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-medium-3-4">
+<h1 id="overview">Overview</h1>
+<p>In part 2 of <em>Introduction to Scientific Computing</em> we get started with Computed Tomography; an imaging method used in, for example, a CT scanner. It takes a lot of calculations to process all the data from a CT scanner into a three-dimensional image, and as you can imagine it is important to have a result within a short time.</p>
+<p>We learn about:</p>
+<ul>
+<li>The physics behind X-ray tomography</li>
+<li>The Radon Transformation and the Fourier Slice Theorem</li>
+<li>The (discrete) Fourier transform and the non-uniform Fourier transform</li>
+<li>Discretizing the Radon transformation</li>
+<li>Various image reconstruction methods, including Filtered Backprojection and Algebraic Reconstruction.</li>
+</ul>
+<p>In addition, we pay attention to writing readable and error-free code, version control, comparing different numerical methods and reproducible numerical experiments.</p>
+<p>The assignments you make every week are processed in pairs into a report in the form of a scientific article of <strong>maximum 10 pages</strong> (including references). Use <a href="https://www.overleaf.com/latex/templates/preparing-a-manuscript-for-submission-to-an-optica-meeting-or-conference/ryxhcjvjfrjk">this template</a> (available from overleaf) . In addition to the report, you also submit the code.</p>
+<p>The <strong>deadline</strong> for the report is <strong>Friday 24 June 2022</strong>. Mail your report to <a href="mailto:t.vanleeuwen@uu.nl">Tristan van Leeuwen</a></p>
+<h1 id="usefull-resources">Usefull resources</h1>
+<ul>
+<li><a href="https://camo.githubusercontent.com/b1b8838502a81077591ccadbf45dc45f2207637b41245e557198b680b0a2e662/68747470733a2f2f6d6174706c6f746c69622e6f72672f63686561747368656574732f68616e646f75742d626567696e6e65722e706e67"><code>Matplotlib</code> cheatsheet (basics)</a></li>
+<li><a href="https://camo.githubusercontent.com/fc055a0d3897e7aec7ec66fc1d7f70cfb2873f82eb5be4ea977286a1cf08fa74/68747470733a2f2f6d6174706c6f746c69622e6f72672f63686561747368656574732f68616e646f75742d696e7465726d6564696174652e706e67"><code>Matplotlib</code> cheatsheet (advanced)</a></li>
+<li><a href="https://camo.githubusercontent.com/62a744e98372f7aaad377cf1f535dcc10117ff196c876102682b03ca4759f420/68747470733a2f2f6d6174706c6f746c69622e6f72672f63686561747368656574732f68616e646f75742d746970732e706e67"><code>Matplotlib</code> cheatsheet (expert)</a></li>
+<li><a href="http://datacamp-community-prod.s3.amazonaws.com/ba1fe95a-8b70-4d2f-95b0-bc954e9071b0"><code>NumPy</code> cheatsheet</a></li>
+<li><a href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html"><code>NumPy</code> for Matlab users</a></li>
+</ul>
+<h1 id="week-1">Week 1</h1>
+<h2 id="lectures">Lectures:</h2>
+<p>In these lectures we learn the basics of Computed Tomography; the underlying physics and the Fourier Slice Theorem, which forms the basis for tomographic image reconstruction.</p>
+<ul>
+<li><a href="https://tristanvanleeuwen.github.io/InleidingSC2-CT/lecture1.html">What is computed tomography?</a></li>
+<li><a href="https://tristanvanleeuwen.github.io/InleidingSC2-CT/lecture2.html">Fourier reconstruction</a></li>
+</ul>
+<h2 id="assignments">Assignments:</h2>
+<p>In these assignments you will investigate the accuracy of the Python method <code>radon</code> and compare different Fourier reconstruction methods for accuracy. After these assignments you will know:</p>
+<ul>
+<li>how to work with the DFT and FFT in Python</li>
+<li>how to implement bi-linear interpolation in Python</li>
+</ul>
+<h1 id="week-2">Week 2</h1>
+<h2 id="lectures-1">Lectures:</h2>
+<p>This week we are going to discretize the Radon transformation and compare different approaches in efficiency and accuracy. In addition, we are looking at an alternative reconstruction method; Filtered Back Projection (FBP).</p>
+<ul>
+<li><a href="https://tristanvanleeuwen.github.io/IntroductionSC2-CT/lecture3.html">Discretization of the Radon transformation</a></li>
+<li><a href="https://tristanvanleeuwen.github.io/IntroductionSC2-CT/lecture4.html">Filtered backprojection</a></li>
+</ul>
+<h2 id="assignments-1">Assignments:</h2>
+<p>In this week’s assignments you will investigate which discretization of the Radon transformation is most efficient and how to efficiently implement the FBP algorithm. After these assignments you will know:</p>
+<ul>
+<li>how to work with sparse matrices in Python</li>
+<li>how to implement matrix-free linear operators</li>
+</ul>
+<h1 id="week-3">Week 3</h1>
+<h2 id="lectures-2">Lectures:</h2>
+<p>This week we look at another class of reconstruction methods; the algebraic methods. Practical matters are also discussed and we get to work with a real dataset.</p>
+<ul>
+<li><a href="https://tristanvanleeuwen.github.io/IntroductionSC2-CT/lecture5.html">Algebraic reconstruction methods</a></li>
+<li><a href="https://tristanvanleeuwen.github.io/InleidingSC2-CT/lecture6.html">Tomography in practice</a></li>
+</ul>
+<h2 id="assignments-2">Assignments:</h2>
+<p>In the assignments we compare different algebraic reconstruction methods and design an efficient and robust algorithm. In addition, we apply this to a real dataset. After these assignments you will know:</p>
+<ul>
+<li>how to efficiently implement various iterative methods for tomographic reconstruction</li>
+<li>how to apply the developed methods to a real tomographic dataset</li>
+</ul>                    
+                </div>
+            </div>
+
+            <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+        </div>
+    </body>
+</html>
