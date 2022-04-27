@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Inleiding Scientific Computing deel 2 - Computed Tomography</title>
+        <title>WISM103, part 2</title>
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
 
@@ -22,9 +22,73 @@
         <script src="https://cdn.rawgit.com/diversen/pandoc-uikit/master/jquery.sticky-kit.js"></script>
 
         <meta name="generator" content="pandoc-uikit" />
-                        <title>Inleiding Scientific Computing deel 2 - Computed Tomography</title>
+                        <title>WISM103, part 2</title>
         <style type="text/css">code{white-space: pre;}</style>
-                                                       
+                        <style type="text/css">
+            pre > code.sourceCode { white-space: pre; position: relative; }
+            pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+            pre > code.sourceCode > span:empty { height: 1.2em; }
+            code.sourceCode > span { color: inherit; text-decoration: inherit; }
+            div.sourceCode { margin: 1em 0; }
+            pre.sourceCode { margin: 0; }
+            @media screen {
+            div.sourceCode { overflow: auto; }
+            }
+            @media print {
+            pre > code.sourceCode { white-space: pre-wrap; }
+            pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+            }
+            pre.numberSource code
+              { counter-reset: source-line 0; }
+            pre.numberSource code > span
+              { position: relative; left: -4em; counter-increment: source-line; }
+            pre.numberSource code > span > a:first-child::before
+              { content: counter(source-line);
+                position: relative; left: -1em; text-align: right; vertical-align: baseline;
+                border: none; display: inline-block;
+                -webkit-touch-callout: none; -webkit-user-select: none;
+                -khtml-user-select: none; -moz-user-select: none;
+                -ms-user-select: none; user-select: none;
+                padding: 0 4px; width: 4em;
+                color: #aaaaaa;
+              }
+            pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+            div.sourceCode
+              {   }
+            @media screen {
+            pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+            }
+            code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+            code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+            code span.at { color: #7d9029; } /* Attribute */
+            code span.bn { color: #40a070; } /* BaseN */
+            code span.bu { } /* BuiltIn */
+            code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+            code span.ch { color: #4070a0; } /* Char */
+            code span.cn { color: #880000; } /* Constant */
+            code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+            code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+            code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+            code span.dt { color: #902000; } /* DataType */
+            code span.dv { color: #40a070; } /* DecVal */
+            code span.er { color: #ff0000; font-weight: bold; } /* Error */
+            code span.ex { } /* Extension */
+            code span.fl { color: #40a070; } /* Float */
+            code span.fu { color: #06287e; } /* Function */
+            code span.im { } /* Import */
+            code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+            code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+            code span.op { color: #666666; } /* Operator */
+            code span.ot { color: #007020; } /* Other */
+            code span.pp { color: #bc7a00; } /* Preprocessor */
+            code span.sc { color: #4070a0; } /* SpecialChar */
+            code span.ss { color: #bb6688; } /* SpecialString */
+            code span.st { color: #4070a0; } /* String */
+            code span.va { color: #19177c; } /* Variable */
+            code span.vs { color: #4070a0; } /* VerbatimString */
+            code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        </style>
+                                               
     </head>
 
     <body>
@@ -34,7 +98,7 @@
 
                         <div class="uk-grid" data-uk-grid-margin>
                 <div class="uk-width-1-1">
-                    <h1 class="uk-heading-large">Inleiding Scientific Computing deel 2 - Computed Tomography</h1>
+                    <h1 class="uk-heading-large">WISM103, part 2</h1>
                                                         </div>
             </div>
             
@@ -44,22 +108,12 @@
                         <div class="uk-panel uk-panel-box menu-begin" >
 
                                                         <ul>
+                                                        <li><a href="#affine-geometry-robotics-and-numerical-approximations">Affine geometry, robotics, and numerical approximations</a>
+                                                        <ul>
                                                         <li><a href="#overview">Overview</a></li>
                                                         <li><a href="#usefull-resources">Usefull resources</a></li>
-                                                        <li><a href="#week-1">Week 1</a>
-                                                        <ul>
-                                                        <li><a href="#lectures">Lectures:</a></li>
-                                                        <li><a href="#assignments">Assignments:</a></li>
-                                                        </ul></li>
-                                                        <li><a href="#week-2">Week 2</a>
-                                                        <ul>
-                                                        <li><a href="#lectures-1">Lectures:</a></li>
-                                                        <li><a href="#assignments-1">Assignments:</a></li>
-                                                        </ul></li>
-                                                        <li><a href="#week-3">Week 3</a>
-                                                        <ul>
-                                                        <li><a href="#lectures-2">Lectures:</a></li>
-                                                        <li><a href="#assignments-2">Assignments:</a></li>
+                                                        <li><a href="#lecture-3">Lecture 3</a></li>
+                                                        <li><a href="#lecture-4">Lecture 4</a></li>
                                                         </ul></li>
                                                         </ul>
                             
@@ -68,66 +122,46 @@
                 </div>
 
                 <div class="uk-width-medium-3-4">
-<h1 id="overview">Overview</h1>
-<p>In part 2 of <em>Introduction to Scientific Computing</em> we get started with Computed Tomography; an imaging method used in, for example, a CT scanner. It takes a lot of calculations to process all the data from a CT scanner into a three-dimensional image, and as you can imagine it is important to have a result within a short time.</p>
-<p>We learn about:</p>
+<!-- #region -->
+<h1 id="affine-geometry-robotics-and-numerical-approximations">Affine geometry, robotics, and numerical approximations</h1>
+<h2 id="overview">Overview</h2>
+<p>In these two lectures, we review numerical approaches to solving (systems of) polynomial equations.</p>
+<h2 id="usefull-resources">Usefull resources</h2>
 <ul>
-<li>The physics behind X-ray tomography</li>
-<li>The Radon Transformation and the Fourier Slice Theorem</li>
-<li>The (discrete) Fourier transform and the non-uniform Fourier transform</li>
-<li>Discretizing the Radon transformation</li>
-<li>Various image reconstruction methods, including Filtered Backprojection and Algebraic Reconstruction.</li>
-</ul>
-<p>In addition, we pay attention to writing readable and error-free code, version control, comparing different numerical methods and reproducible numerical experiments.</p>
-<p>The assignments you make every week are processed in pairs into a report in the form of a scientific article of <strong>maximum 10 pages</strong> (including references). Use <a href="https://www.overleaf.com/latex/templates/preparing-a-manuscript-for-submission-to-an-optica-meeting-or-conference/ryxhcjvjfrjk">this template</a> (available from overleaf) . In addition to the report, you also submit the code.</p>
-<p>The <strong>deadline</strong> for the report is <strong>Friday 24 June 2022</strong>. Mail your report to <a href="mailto:t.vanleeuwen@uu.nl">Tristan van Leeuwen</a></p>
-<h1 id="usefull-resources">Usefull resources</h1>
-<ul>
+<li><a href="https://scipy-lectures.org/index.html"><code>Scipy</code> Lecture Notes</a></li>
 <li><a href="https://camo.githubusercontent.com/b1b8838502a81077591ccadbf45dc45f2207637b41245e557198b680b0a2e662/68747470733a2f2f6d6174706c6f746c69622e6f72672f63686561747368656574732f68616e646f75742d626567696e6e65722e706e67"><code>Matplotlib</code> cheatsheet (basics)</a></li>
 <li><a href="https://camo.githubusercontent.com/fc055a0d3897e7aec7ec66fc1d7f70cfb2873f82eb5be4ea977286a1cf08fa74/68747470733a2f2f6d6174706c6f746c69622e6f72672f63686561747368656574732f68616e646f75742d696e7465726d6564696174652e706e67"><code>Matplotlib</code> cheatsheet (advanced)</a></li>
 <li><a href="https://camo.githubusercontent.com/62a744e98372f7aaad377cf1f535dcc10117ff196c876102682b03ca4759f420/68747470733a2f2f6d6174706c6f746c69622e6f72672f63686561747368656574732f68616e646f75742d746970732e706e67"><code>Matplotlib</code> cheatsheet (expert)</a></li>
 <li><a href="http://datacamp-community-prod.s3.amazonaws.com/ba1fe95a-8b70-4d2f-95b0-bc954e9071b0"><code>NumPy</code> cheatsheet</a></li>
 <li><a href="https://numpy.org/doc/stable/user/numpy-for-matlab-users.html"><code>NumPy</code> for Matlab users</a></li>
 </ul>
-<h1 id="week-1">Week 1</h1>
-<h2 id="lectures">Lectures:</h2>
-<p>In these lectures we learn the basics of Computed Tomography; the underlying physics and the Fourier Slice Theorem, which forms the basis for tomographic image reconstruction.</p>
+<h2 id="lecture-3">Lecture 3</h2>
+<p>Recap of rootfinding, computing in finite precision arithmetic, accuracy and stability of algorithms for solving linear systems of equations.</p>
 <ul>
-<li><a href="https://tristanvanleeuwen.github.io/InleidingSC2-CT/lecture1.html">What is computed tomography?</a></li>
-<li><a href="https://tristanvanleeuwen.github.io/InleidingSC2-CT/lecture2.html">Fourier reconstruction</a></li>
+<li><p>Read: <a href="https://link.springer.com/book/10.1007%2F978-3-319-07671-3">Numerical methods and optimization</a> chapters 7.3, 14, 3.6</p></li>
+<li><p>The slides are found <a href="...">here</a></p></li>
+<li><p>The notebooks used in the lecture are found <a href="...">here</a></p></li>
 </ul>
-<h2 id="assignments">Assignments:</h2>
-<p>In these assignments you will investigate the accuracy of the Python method <code>radon</code> and compare different Fourier reconstruction methods for accuracy. After these assignments you will know:</p>
+<p>Suggested exercises:</p>
 <ul>
-<li>how to work with the DFT and FFT in Python</li>
-<li>how to implement bi-linear interpolation in Python</li>
+<li>Analyse the convergence of the fixed point method with <span class="math inline"><em>g</em>(<em>x</em>) = <em>x</em> + <em>α</em><em>f</em>(<em>x</em>)</span>; under what conditions on <span class="math inline"><em>α</em></span> does the method converge and what is the optimal <span class="math inline"><em>α</em></span>?</li>
+<li>Analyse the convergence of the modified Newton’s method <span class="math inline"><em>x</em><sub><em>k</em> + 1</sub> = <em>x</em><sub><em>k</em></sub> − <em>m</em><em>f</em>(<em>x</em><sub><em>k</em></sub>)/<em>f</em>′(<em>x</em><sub><em>k</em></sub>)</span> when applied to a function that has a root with multiplicity m. What happens when you apply this method to a function with a root with higher or lower multiplicity?</li>
 </ul>
-<h1 id="week-2">Week 2</h1>
-<h2 id="lectures-1">Lectures:</h2>
-<p>This week we are going to discretize the Radon transformation and compare different approaches in efficiency and accuracy. In addition, we are looking at an alternative reconstruction method; Filtered Back Projection (FBP).</p>
+<h2 id="lecture-4">Lecture 4</h2>
+<p>Newton-methods for solving systems of non-linear equations,</p>
 <ul>
-<li><a href="https://tristanvanleeuwen.github.io/IntroductionSC2-CT/lecture3.html">Discretization of the Radon transformation</a></li>
-<li><a href="https://tristanvanleeuwen.github.io/IntroductionSC2-CT/lecture4.html">Filtered backprojection</a></li>
+<li>Read: <a href="https://link.springer.com/book/10.1007%2F978-3-319-07671-3">Numerical methods and optimization</a>, chapter 7.4</li>
+<li>The slides are found <a href="...">here</a></li>
+<li>The notebooks used in the lecture are found <a href="...">here</a></li>
 </ul>
-<h2 id="assignments-1">Assignments:</h2>
-<p>In this week’s assignments you will investigate which discretization of the Radon transformation is most efficient and how to efficiently implement the FBP algorithm. After these assignments you will know:</p>
+<p>Suggested exercises:</p>
 <ul>
-<li>how to work with sparse matrices in Python</li>
-<li>how to implement matrix-free linear operators</li>
+<li>Try to solve the Cyclic-6 problem using Gröbner basis and elimination. How sensitive is the system to small errors?</li>
+<li>Prove convergence of Newton’s method using a fixed point argument. Start by proving convergence for the multi-variate fixed-point iteration <span class="math inline"><em>x</em><sub><em>k</em> + 1</sub> = <em>g</em>(<em>x</em><sub><em>k</em></sub>)</span></li>
+<li>Show that minimizing <span class="math inline"><em>ϕ</em>(<em>x</em>) = ∥<em>f</em>(<em>x</em>)∥<sup>2</sup></span> is equivalent to using Newton’s method using the pseudo-inverse of the Jacobian in case the system is overdetermined (in this case <span class="math inline"><em>J</em><sup>†</sup> = (<em>J</em><sup><em>T</em></sup><em>J</em>)<sup> − 1</sup><em>J</em><sup><em>T</em></sup></span>). Recall that at a minimum, the gradient of <span class="math inline"><em>ϕ</em></span> is zero.</li>
 </ul>
-<h1 id="week-3">Week 3</h1>
-<h2 id="lectures-2">Lectures:</h2>
-<p>This week we look at another class of reconstruction methods; the algebraic methods. Practical matters are also discussed and we get to work with a real dataset.</p>
-<ul>
-<li><a href="https://tristanvanleeuwen.github.io/IntroductionSC2-CT/lecture5.html">Algebraic reconstruction methods</a></li>
-<li><a href="https://tristanvanleeuwen.github.io/InleidingSC2-CT/lecture6.html">Tomography in practice</a></li>
-</ul>
-<h2 id="assignments-2">Assignments:</h2>
-<p>In the assignments we compare different algebraic reconstruction methods and design an efficient and robust algorithm. In addition, we apply this to a real dataset. After these assignments you will know:</p>
-<ul>
-<li>how to efficiently implement various iterative methods for tomographic reconstruction</li>
-<li>how to apply the developed methods to a real tomographic dataset</li>
-</ul>                    
+<!-- #endregion -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>                    
                 </div>
             </div>
 
