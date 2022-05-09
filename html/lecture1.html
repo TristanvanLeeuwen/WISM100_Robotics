@@ -66,10 +66,10 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <style type="text/css">
     pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
 .highlight .c { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment */
@@ -14274,12 +14274,10 @@ a.anchor-link {
 :root {
   --color-1: #cd003a;
   --color-2: #00493d;
-  --logo: url("cwi_logo.png");
-  --font: verdana-bold;
-  --pointer: url('red_32.png');
+  --logo: url("cwi_logo.png") ;
 }
 body { /* Change the logo urls in the line after if needed */
-    background: var(--logo) !important;
+    background: url("cwi_logo.png") !important;
     background-size: 20% !important;
     background-position: 1% -2% !important;
     background-repeat: no-repeat !important;
@@ -14291,7 +14289,7 @@ body { /* Change the logo urls in the line after if needed */
   width: inherit;
   padding: 0.4em;
   margin: 0px;
-  font-family: var(--font);
+  font-family: verdana;
   font-size: 80%;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
@@ -14306,10 +14304,15 @@ body { /* Change the logo urls in the line after if needed */
   height: 400px;
   width: auto;
 }
+/*.reveal i {
+  font-style: normal;
+  font-family: verdana;
+  font-size: 2em;
+}*/
 
 .reveal h1 {
   text-transform: none;
-  font-family: var(--font);
+  font-family: verdana-bold;
   font-style: normal;
   font-size: 36px;
   color: var(--color-1);
@@ -14317,14 +14320,15 @@ body { /* Change the logo urls in the line after if needed */
 
 .reveal h2 {
   text-transform: none;
-  font-family: var(--font);
+  font-family: verdana-bold;
   font-style: normal;
   font-size: 28px;
 }
 .reveal p {
-  font-family: var(--font);
+  font-family: verdana;
   font-size: 20px;
 }
+
 .reveal .slides {
   text-align: left;
 }
@@ -14362,8 +14366,37 @@ div.jp-InputArea {
 }
 
 .reveal {
-  cursor: var(--pointer), crosshair;
+  cursor: url('red_32.png'), crosshair;
 }
+
+/* Reveal navigation controls */
+
+/*.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #52A3D9 !important;
+}
+
+.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
+  border-left-color: var(--color-1) !important; }
+
+.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
+  border-bottom-color: var(--color-1) !important; }
+
+.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
+  border-top-color: var(--color-1) !important; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: var(--color-2) !important; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: var(--color-2) !important; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: var(--color-2) !important; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: var(--color-2) !important; }
+*/
 
 .reveal .controls .navigate-left {
     /* right: 6.4em;
@@ -14399,6 +14432,22 @@ div.jp-InputArea {
 .reveal .progress span {
   background: var(--color-1) !important;
 }
+
+/* Scrollbars */
+/*
+::-webkit-scrollbar
+{
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar *
+{
+  background:transparent;
+}
+::-webkit-scrollbar-thumb
+{
+  background: var(--color-1) !important;
+}*/
 </style>
 
 </head>
@@ -14472,7 +14521,7 @@ div.jp-InputArea {
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[124]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># copied from: https://personal.math.ubc.ca/~pwalls/math-python/roots-optimization/bisection/</span>
@@ -14539,7 +14588,7 @@ div.jp-InputArea {
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[125]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> 
@@ -14599,7 +14648,7 @@ error =  0.0
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[126]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
@@ -14672,7 +14721,7 @@ $$g(x) = x - f(x)/f'(x).$$
 </div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[127]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">Df</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">max_iter</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-16</span><span class="p">):</span>
@@ -14732,7 +14781,7 @@ $$g(x) = x - f(x)/f'(x).$$
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[128]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
@@ -14760,8 +14809,8 @@ $$g(x) = x - f(x)/f'(x).$$
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Found solution after 27 iterations.
-root  =  7.450580596923828e-09
+<pre>Found solution after 6 iterations.
+root  =  5.421010862427522e-20
 </pre>
 </div>
 </div>
@@ -14790,7 +14839,7 @@ root  =  7.450580596923828e-09
 </div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[130]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14822,13 +14871,13 @@ root  =  7.450580596923828e-09
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[130]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f8746b2b640&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f87488f8790&gt;]</pre>
 </div>
 
 </div>
@@ -14901,10 +14950,10 @@ root  =  7.450580596923828e-09
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[134]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -14917,7 +14966,7 @@ root  =  7.450580596923828e-09
 <span class="n">zz</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">yy</span>
 
 <span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="n">df</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">1</span>
 
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">zz</span> <span class="o">=</span> <span class="n">zz</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span> <span class="o">/</span> <span class="n">df</span><span class="p">(</span><span class="n">zz</span><span class="p">)</span>
@@ -14938,13 +14987,13 @@ root  =  7.450580596923828e-09
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[134]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.image.AxesImage at 0x7fe6ebc5ea10&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x7f872f8d0970&gt;</pre>
 </div>
 
 </div>
@@ -14958,7 +15007,7 @@ root  =  7.450580596923828e-09
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -14986,7 +15035,7 @@ root  =  7.450580596923828e-09
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Horner's-method">Horner's method<a class="anchor-link" href="#Horner's-method">&#182;</a></h2><ul>
 <li>A simple idea is to use Newton to find a root; divide it out, and continue.</li>
-<li>To this, we need to implement polynomial division</li>
+<li>To do this, we need to implement polynomial division</li>
 </ul>
 
 </div>

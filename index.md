@@ -28,6 +28,7 @@ Suggested exercises:
 
 * Analyse the convergence of the fixed point method with $g(x) = x + \alpha f(x)$; under what conditions on $\alpha$ does the method converge and what is the optimal $\alpha$?
 * Analyse the convergence of the modified Newton's method $x_{k+1} = x_k - m f(x_k)/f'(x_k)$ when applied to a function that has a root with multiplicity m. What happens when you apply this method to a function with a root with higher or lower multiplicity?
+* Try to solve the Cyclic-6 problem using Gröbner basis and elimination. How sensitive is the system to small errors?
 
 ## Lecture 4
 
@@ -39,13 +40,6 @@ Newton-methods for solving systems of non-linear equations,
 
 Suggested exercises:
 
-* Try to solve the Cyclic-6 problem using Gröbner basis and elimination. How sensitive is the system to small errors?
-* Prove convergence of Newton's method using a fixed point argument. Start by proving convergence for the multi-variate fixed-point iteration $x_{k+1} = g(x_k)$
+* Prove convergence of the multivariate Newton method using a fixed point argument. Start by proving convergence for the multi-variate fixed-point iteration $x_{k+1} = g(x_k)$
 * Show that minimizing $\phi(x) = \|f(x)\|^2$ is equivalent to using Newton's method using the pseudo-inverse of the Jacobian in case the system is overdetermined (in this case $J^{\dagger} = (J^TJ)^{-1}J^T$). Recall that at a minimum, the gradient of $\phi$ is zero.
-
-
-<!-- #endregion -->
-
-```python
-
-```
+* Solve the Cyclic-6 problem using Newton's method
