@@ -21,7 +21,7 @@ Recap of rootfinding, computing in finite precision arithmetic, accuracy and sta
 
 * Read: [Numerical methods and optimization](https://link.springer.com/book/10.1007%2F978-3-319-07671-3) chapters 7.3, 14, 3.6
 
-* The slides are found [here](...) 
+* The slides are found [here](https://tristanvanleeuwen.github.io/WISM100_Robotics/lecture1.html#/) 
 * The notebooks used in the lecture are found [here](...)
 
 Suggested exercises:
