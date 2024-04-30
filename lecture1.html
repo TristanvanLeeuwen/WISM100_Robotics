@@ -14986,7 +14986,7 @@ $$x^2 - 4x + 3.$$
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Why-does-it-work?">Why does it work?<a class="anchor-link" href="#Why-does-it-work?">&#182;</a></h3><p>Given</p>
 $$f(x) = \sum_{i=0}^n a_i x^{i},$$<p>define</p>
-$$b_{i-1} = a_{i-1} + b_i x_0, \quad b_n - a_n.$$<p>It can be shown that</p>
+$$b_{i-1} = a_{i-1} + b_i x_0, \quad b_n = a_n.$$<p>It can be shown that</p>
 $$f(x) = \left(\sum_{i=1}^n b_{i}x^{i-1}\right)(x-x_0) + b_0.$$
 </div>
 </div></section><section>
@@ -15044,7 +15044,13 @@ $$C[f] = \left(\begin{matrix} 0 &amp; 0 &amp; \ldots &amp;0 &amp; -a_0 \\ 1 &amp
 </blockquote>
 
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Once we found one eigenvector we can restrict the iteration to the remaining subspace by projection.</p>
+
+</div>
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
@@ -15388,7 +15394,7 @@ x_1 = -2.00000000000000000000e+02
 <h2 id="Error-analysis-of-the-fixed-point-iteration">Error analysis of the fixed-point iteration<a class="anchor-link" href="#Error-analysis-of-the-fixed-point-iteration">&#182;</a></h2><p>Assuming we can evaluate $g$ with relative accuracy $\eta$, the fixed point iteration becomes</p>
 $$\widetilde{x}_{k+1} = g(\widetilde{x}_k)(1 + \epsilon).$$<p>The error $e_k = \widetilde{x}_k - x_k$ then obeys (assuming $|g| \leq M$ and $|g'| \leq L &lt; 1$)</p>
 $$|e_{k+1}| \leq L |e_k| + \eta M.$$<p>We then find</p>
-$$|e_{k}| \leq \left(\right) |e_0|.$$
+$$|e_{k}| \leq L^n |e_0| + \eta M\cdot \left(\frac{1-L^n}{1-L}\right).$$
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
